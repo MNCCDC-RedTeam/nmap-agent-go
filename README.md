@@ -19,7 +19,7 @@ At this point there should be an executable in the project folder.
 
 If nmap is not installed on your system, install it now.
 # Nmap Scanner
-The scanner used in this application is nmap with a go wrapper which gets jobs from the server and submits results back to the server to be displayed by the red team. The scanner uses a `.env` file to define some of the variables needed to execute. There are 3 required parameters and 1 optional parameter. The required parameters are:
+The scanner here is nmap with a go wrapper which gets jobs from the server and submits results back to the server to be shown to the red team. The scanner uses a `.env` file to define some of the variables needed to execute. There are 3 required parameters and 1 optional parameter. The required parameters are:
 - `API_USER` = The username created earlier in setup
 - `API_PASS` = The password created earlier in setup
 - `API_URL_BASE` = The URL that points to the webserver
