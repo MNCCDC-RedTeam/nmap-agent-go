@@ -1,4 +1,6 @@
 This repo contains a golang wrapper for nmap that performs the scan before sending results to the associated webserver. 
+# Acknowledgements
+Shout out goes to s3cr3t for creating the original bot, and for captaining the Red Team for Minnesota CCDC for many years. Your work will go on, and is in good hands.
 # Prerequisites
 Instructions for downloading and installing golang for linux can be found on the golang website here: https://go.dev/doc/install.
 
@@ -39,12 +41,6 @@ Once `.env` is created, then all that remains is to run it as root, as it uses n
 sudo ./nmap-wrapper-go
 ```
 
-At this point, the executable will pull the next job down, execute it, then returning the results to the webserver before ending the process. With that in mind, during the competition it should probably be wrapped in a bash runner to keep it working without manual intervention. Once results are sent to the webserver, `/main.html` should update the results for the most recently completed job.
+At this point, the executable will pull the next job down, execute it, then returning the results to the webserver before ending the process. Once results are sent to the webserver, `/main.html` should update the results for the most recently completed job.
 
-A secondary wrapper to ensure the scanner continues indefinitely. This is meant to be run in the same directory as the nmap agent. 
-```bash
-while true
-do
-	sudo ./nmap-agent-go
-done
-```
+This repo includes a secondary wrapper `runner.sh` to ensure the scanner continues indefinitely, changing the IP address of the VM after each run. This should make the scanner much more resistant to teams IP banning it. 
